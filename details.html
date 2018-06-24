@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Manager Demo</title>    
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">UIT</a>
+        </div>
+       
+    </nav>
+    <div id="mySidenav" class="sidenav">
+            <a href="./index.html">Home</a>
+            <a href="./list.html">Device List</a>
+    </div>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/my-css.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div class="content-container">
+        <div class="row">
+            <div class="col-lg-6">
+                    <div class = "panel panel-default">
+                        <div class="panel-heading"><h3>Device Spec:</h3></div>
+                        <table class="table" id="device-detail-table">
+                        <tbody>
+                            <tr><td>MAC:</td><td id="dmac-td"></td></tr>
+                            <tr><td>Device Name:</td><td id="dname-td"></td></tr>
+                            <tr><td>Firmware:</td><td id="dfirm-td"></td></tr>
+                            <tr><td>Memory:</td><td id="dmem-td"></td></tr>
+                        </tbody>
+                        </table>                                
+                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-default" id="dhcp-panel">
+                    <div class="panel-heading"><h3>DHCP</h3></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                    <div class="panel panel-default" id="stations-panel">
+                        <div class="panel-heading"><h3>Stations</h3></div>
+                        <table class="table" id="stations-table">
+                            <tbody></tbody>
+                        </table>
+                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-default" id="splash-panel">
+                    <div class="panel-heading"><h3>Splash</h3></div>
+                    
+                </div>
+            </div>
+            <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Edit station</h4>
+                        </div>
+                        <div class="modal-body" id="modal-bod">
+                                <form action="http://localhost:9999/" id="myform" method="POST">
+                                    Interface: <input type="text" id="modal-if"><br>
+                                    SSID: <input type="text" name="ssid" id="modal-ssid"><br>
+                                    MAC: <input type="text" name="mac" id="modal-mac"><br>
+                                    Passphrase: <input type="password" name="passwd"><br>
+                                    Rx packages: <b id="modal-rx-pkt"></b><br>
+                                    Tx packages: <b id="modal-tx-pkt"></b><br>
+                                    Rx bytes:  <b id="modal-rx-bytes"></b><br>
+                                    Tx bytes: <b id="modal-tx-bytes"></b><br>
+                                  </form>                                  
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" form="myform">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+        </div>
+      
+    </div>
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/devinfo.js"></script>
+    <script src="js/devdetails.js"></script>
+  </body>
+</html>
