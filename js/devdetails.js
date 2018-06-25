@@ -32,6 +32,7 @@ var getDeviceDetails = function(mac){
         $("#dname-td").html(obj.device.machine_type);
         $("#dfirm-td").html(obj.device.firmware);
         $("#dmem-td").html(obj.device.free_ram+"/"+obj.device.total_ram);
+
         $.each(obj.dhcp,function(){
             $("#dhcp-panel").append('<button class="collapsible">'+ this.ip+'</button><div class="content"><p>MAC: '+this.mac+'</p><p>Name: '+this.name+'</p></div>');
         })
@@ -40,7 +41,7 @@ var getDeviceDetails = function(mac){
                 $("#splash-panel").append('<button class="collapsible">'+ this.ip+'</button><div class="content"><p>MAC: '+this.mac+'</p></div>');
             }            
         })
-        $.each(obj.stations, function(){
+        $.each(obj.ssids, function(){
             var tr='<tr><td>'+this.interface+'</td><td>'+this.ssid+'</td><td>'+this.mac+'</td><td><button id="edit-btn" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Edit</button></td></tr>';
             $("#stations-table tbody").append(tr);
         }) 
@@ -62,19 +63,12 @@ $("#stations-table tbody").on('click','button',function(){
   //  $("#modal-bod").empty();
     var col,txt;
     mac = $(this).parent().siblings("td").next().next().html();
-    $.each(object.stations,function(){
-        if (this.mac==mac){
-            $("#modal-if").val(this.interface);
-            $("#modal-if").prop("readonly",true);
-            $("#modal-ssid").val(this.ssid);
-            $("#modal-mac").val(this.mac);
-            $("#modal-mac").prop("readonly",true);
-            $("#modal-rx-pkt").html(this.rx_packets);
-            $("#modal-tx-pkt").html(this.tx_packets);
-            $("#modal-rx-bytes").html(this.rx_bytes);
-            $("#modal-tx-bytes").html(this.tx_bytes);
-
-
+    $.each(object.ssids,function(){
+        $("#modal-interface").html(this.interface);
+        $("#modal-channel").val(this.channel);
+        $("#modal-ssid").val(this.ssid);
+        if(this.bssid){
+            $("#modal-bssid").val(this.bssid);
         }
     })
 

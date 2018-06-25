@@ -55,7 +55,7 @@
         <div class="row">
             <div class="col-lg-6">
                     <div class="panel panel-default" id="stations-panel">
-                        <div class="panel-heading"><h3>Stations</h3></div>
+                        <div class="panel-heading"><h3>SSIDS</h3></div>
                         <table class="table" id="stations-table">
                             <tbody></tbody>
                         </table>
@@ -78,14 +78,11 @@
                         </div>
                         <div class="modal-body" id="modal-bod">
                                 <form action="http://localhost:9999/" id="myform" method="POST">
-                                    Interface: <input type="text" id="modal-if"><br>
+                                    Interface: <b id="modal-interface"></b><br>
                                     SSID: <input type="text" name="ssid" id="modal-ssid"><br>
-                                    MAC: <input type="text" name="mac" id="modal-mac"><br>
+                                    Channel: <input type="number" name="channel" id="modal-channel"><br>
                                     Passphrase: <input type="password" name="passwd"><br>
-                                    Rx packages: <b id="modal-rx-pkt"></b><br>
-                                    Tx packages: <b id="modal-tx-pkt"></b><br>
-                                    Rx bytes:  <b id="modal-rx-bytes"></b><br>
-                                    Tx bytes: <b id="modal-tx-bytes"></b><br>
+                                    BSSID: <input type="text" name="bssid" id="modal-bssid">
                                   </form>                                  
                         </div>
                         <div class="modal-footer">
