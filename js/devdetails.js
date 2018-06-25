@@ -1,26 +1,6 @@
 var coll = document.getElementsByClassName("collapsible");
 var i;
 var object;
-var HttpClient = function() {
-    this.get = function(aUrl, aParams, aCallback) {
-        var anHttpRequest = new XMLHttpRequest();
-        anHttpRequest.onreadystatechange = function() { 
-            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                aCallback(anHttpRequest.responseText);
-        }
-        if (!aParams.localeCompare("NULL")){
-            anHttpRequest.open( "GET", aUrl, true );  
-        }
-        else{
-            anHttpRequest.open( "GET", aUrl+':'+aParams, true );  
-        }
-                  
-        anHttpRequest.send( null );
-    }
-}
-
-
-
 
 var getDeviceDetails = function(mac){
     var client = new HttpClient();
@@ -42,8 +22,8 @@ var getDeviceDetails = function(mac){
             }            
         })
         $.each(obj.ssids, function(){
-            var tr='<tr><td>'+this.interface+'</td><td>'+this.ssid+'</td><td>'+this.mac+'</td><td><button id="edit-btn" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Edit</button></td></tr>';
-            $("#stations-table tbody").append(tr);
+            var tr='<tr><td>'+this.interface+'</td><td>'+this.ssid+'</td><td><button id="edit-btn" type="button" class="btn btn-info" data-toggle="modal" data-target="#ssid-modal">Edit</button></td></tr>';
+            $("#ssids-table tbody").append(tr);
         }) 
 
     })
@@ -59,21 +39,33 @@ $(document).on('click', ".collapsible", function(){
         }
 });
 
-$("#stations-table tbody").on('click','button',function(){
+$("#ssids-table tbody").on('click','button',function(){
   //  $("#modal-bod").empty();
     var col,txt;
-    mac = $(this).parent().siblings("td").next().next().html();
+    dinterface = $(this).parent().siblings("td").html();
+    console.log(dinterface);
     $.each(object.ssids,function(){
-        $("#modal-interface").html(this.interface);
-        $("#modal-channel").val(this.channel);
-        $("#modal-ssid").val(this.ssid);
-        if(this.bssid){
-            $("#modal-bssid").val(this.bssid);
+        if (this.interface==dinterface){
+            $("#modal-interface").html(this.interface);
+            $("#modal-channel").val(this.channel);
+            $("#modal-ssid").val(this.ssid);
+            if(this.bssid){
+                $("#modal-bssid").val(this.bssid);
+            }
         }
+        
     })
 
 })
 
+$("#modal-bod input").on('change', function(){
+    console.log("Changed");
+    $(this).addClass('changed');
+})
+
+$("#myform").on('submit', function(){
+    $('input:not(.changed)').prop('disabled',true);
+})
 
 $(document).ready(function(){
     var currentLocation=document.location.toString();

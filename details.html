@@ -54,9 +54,13 @@
         </div>
         <div class="row">
             <div class="col-lg-6">
-                    <div class="panel panel-default" id="stations-panel">
+                    <div class="panel panel-default" id="ssids-panel">
                         <div class="panel-heading"><h3>SSIDS</h3></div>
-                        <table class="table" id="stations-table">
+                        <table class="table" id="ssids-table">
+                            <thead>
+                                <th>Interface</th>
+                                <th>SSID</th>
+                            </thead>
                             <tbody></tbody>
                         </table>
                     </div>
@@ -67,17 +71,17 @@
                     
                 </div>
             </div>
-            <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal fade" id="ssid-modal" role="dialog">
                     <div class="modal-dialog">
                     
                       <!-- Modal content-->
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Edit station</h4>
+                          <h4 class="modal-title">Edit SSID</h4>
                         </div>
                         <div class="modal-body" id="modal-bod">
-                                <form action="http://localhost:9999/" id="myform" method="POST">
+                                <form action="http://localhost:8080/control/single" id="myform" method="POST">
                                     Interface: <b id="modal-interface"></b><br>
                                     SSID: <input type="text" name="ssid" id="modal-ssid"><br>
                                     Channel: <input type="number" name="channel" id="modal-channel"><br>
@@ -92,7 +96,7 @@
                       </div>
                       
                     </div>
-                  </div>
+            </div>
         </div>
       
     </div>
