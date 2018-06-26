@@ -46,7 +46,7 @@ $("#ssids-table tbody").on('click','button',function(){
     console.log(dinterface);
     $.each(object.ssids,function(){
         if (this.interface==dinterface){
-            $("#modal-interface").html(this.interface);
+            $("#modal-interface").val(this.interface);
             $("#modal-channel").val(this.channel);
             $("#modal-ssid").val(this.ssid);
             if(this.bssid){
@@ -65,6 +65,7 @@ $("#modal-bod input").on('change', function(){
 
 $("#myform").on('submit', function(){
     $('input:not(.changed)').prop('disabled',true);
+    $('#modal-interface').prop('disabled',false);
 })
 
 $(document).ready(function(){
