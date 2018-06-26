@@ -1,4 +1,4 @@
-const serverLink="http://localhost:8080/user/distributor";
+const serverLink="http://10.71.1.75:8080/user/distributor";
 var currentURL = window.location.hostname;
 var object,i=1;
 
