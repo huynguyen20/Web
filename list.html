@@ -41,6 +41,7 @@
               <th>Device MAC</th>
               <th>Wan IP</th>
               <th>Last update</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -61,7 +62,7 @@
               <h4 class="modal-title">Send command</h4>
             </div>
             <div class="modal-body" id="modal-bod">
-              <form action="http://localhost:8080/control/multiple" id="myform" method="POST">
+              <form action="http://10.71.1.75:8080/control/multiple" id="myform" method="POST">
                 <b>Command:</b><br>
                 <textarea name="command" cols="50" rows="5" id="command-area"></textarea>
                 <label for="mac-select">Select device (hold CTRL or DRAG to multiselect) :</label>

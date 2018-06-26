@@ -26,9 +26,22 @@ var getDeviceList = function(){
         var obj=JSON.parse(data);
         object=obj;
         $.each(obj,function() {
+            var ts=new Date(1000*this.device.created_at);
+            var ts2=new Date(this.device.created_at);
+            var diff=Date.now();
+            console.log(diff);
+            diff=~~((diff-ts) /1000);
+            console.log(diff+' '+ts+' '+ts2+' '+this.device.created_at);
+            var datestring=ts.toLocaleString();
             var machine_type=this.device.machine_type;
             machine_type = machine_type.replace(/^\n|\n$/g, '');
-            var row='<tr><td>'+i+'</td><td>'+machine_type+'</td><td>'+this.device.mac+'</td><td>'+this.device.wan_ip+'</td><td>'+this.device.created_at+'</td></tr>';
+            var row;
+            if (diff<45){
+                row='<tr><td>'+i+'</td><td>'+machine_type+'</td><td>'+this.device.mac+'</td><td>'+this.device.wan_ip+'</td><td>'+datestring+'</td><td><span class="label label-success">OK</span></td></tr>'
+            }
+            else{
+                row='<tr><td>'+i+'</td><td>'+machine_type+'</td><td>'+this.device.mac+'</td><td>'+this.device.wan_ip+'</td><td>'+datestring+'</td><td><span class="label label-danger">Warning</span></td></tr>'
+            }
             $("#device-list-table tbody").append(row);
             $("#mac-select").append('<option>'+this.device.mac+'</option>');
             i++;
