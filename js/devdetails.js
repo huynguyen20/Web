@@ -1,33 +1,35 @@
 var coll = document.getElementsByClassName("collapsible");
 var i;
-var object;
+var object,serverLink='http://10.71.1.75:8080/user/distributor';
 
-var getDeviceDetails = function(mac){
-    var client = new HttpClient();
-    client.get(serverLink,mac,function(data){
-        var obj=JSON.parse(data);
-        object=obj;
-        console.log(obj);
-        $("#dmac-td").html(obj.device.mac);
-        $("#dname-td").html(obj.device.machine_type);
-        $("#dfirm-td").html(obj.device.firmware);
-        $("#dmem-td").html(obj.device.free_ram+"/"+obj.device.total_ram);
-
-        $.each(obj.dhcp,function(){
-            $("#dhcp-panel").append('<button class="collapsible">'+ this.ip+'</button><div class="content"><p>MAC: '+this.mac+'</p><p>Name: '+this.name+'</p></div>');
-        })
-        $.each(obj.splash,function(){
-            if(this.auth_state=="pass"){
-                $("#splash-panel").append('<button class="collapsible">'+ this.ip+'</button><div class="content"><p>MAC: '+this.mac+'</p></div>');
-            }            
-        })
-        $.each(obj.ssids, function(){
-            var tr='<tr><td>'+this.interface+'</td><td>'+this.ssid+'</td><td><button id="edit-btn" type="button" class="btn btn-info" data-toggle="modal" data-target="#ssid-modal">Edit</button></td></tr>';
-            $("#ssids-table tbody").append(tr);
-        }) 
-
+var getDeviceDetails = function(devmac){
+    $.ajax({
+        url: serverLink+':'+devmac,
+        data: {
+            mac: devmac,
+        },
+        method: "GET",
+        success: function(data){
+            object=data;
+            $("#dmac-td").html(data.device.mac);
+            $("#dname-td").html(data.device.machine_type);
+            $("#dfirm-td").html(data.device.firmware);
+            $("#dmem-td").html(data.device.free_ram+"/"+data.device.total_ram);
+    
+            $.each(data.dhcp,function(){
+                $("#dhcp-panel").append('<button class="collapsible">'+ this.ip+'</button><div class="content"><p>MAC: '+this.mac+'</p><p>Name: '+this.name+'</p></div>');
+            })
+            $.each(data.splash,function(){
+                if(this.auth_state=="pass"){
+                    $("#splash-panel").append('<button class="collapsible">'+ this.ip+'</button><div class="content"><p>MAC: '+this.mac+'</p></div>');
+                }            
+            })
+            $.each(data.ssids, function(){
+                var tr='<tr><td>'+this.interface+'</td><td>'+this.ssid+'</td><td><button id="edit-btn" type="button" class="btn btn-info" data-toggle="modal" data-target="#ssid-modal">Edit</button></td></tr>';
+                $("#ssids-table tbody").append(tr);
+            }) 
+        }
     })
-
 }
 $(document).on('click', ".collapsible", function(){
     this.classList.toggle("active");
@@ -59,7 +61,6 @@ $("#ssids-table tbody").on('click','button',function(){
 })
 
 $("#modal-bod input").on('change', function(){
-    console.log("Changed");
     $(this).addClass('changed');
 })
 
