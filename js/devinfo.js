@@ -19,7 +19,7 @@
                     var machine_type=this.device.machine_type;
                     machine_type = machine_type.replace(/^\n|\n$/g, '');
                     var row;
-                    if (diff%2){
+                    if (diff<60){
                         row='<tr><td>'+i+'</td><td>'+machine_type+'</td><td>'+this.device.mac+'</td><td>'+this.device.wan_ip+'</td><td>'+datestring+'</td><td><span class="label label-success">Connected</span></td></tr>'
                     }
                     else{
@@ -42,7 +42,7 @@
 
     window.setInterval(function(){
         getDeviceList();
-    }, 1000);
+    }, 5000);
 
     $(document).ready(function(){
         getDeviceList();

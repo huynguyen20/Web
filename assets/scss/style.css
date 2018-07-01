@@ -1300,8 +1300,8 @@ header .form-inline {
       padding: 5px 0; }
   .user-area .user-avatar {
     float: right;
-    margin-top: 4px;
-    width: 32px; }
+    margin-top: 1px;
+    width: 50px; }
   .user-area .user-info .name {
     color: #8c8c8c;
     font-size: 14px;
