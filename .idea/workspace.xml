@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aada1d49-832e-4560-9eaa-903c2fae6936" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/devdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/devdetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/old-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/devdetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/devdetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/devinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/devinfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/splash.html" beforeDir="false" afterPath="$PROJECT_DIR$/splash.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/widgets.html" beforeDir="false" afterPath="$PROJECT_DIR$/widgets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dhcpdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/dhcpdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,8 +21,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+            <state relative-caret-position="153">
+              <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -47,8 +39,8 @@
       <file leaf-file-name="devdetail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/devdetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+            <state relative-caret-position="118">
+              <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -69,20 +61,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dhcpdetail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dhcpdetail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dhcpdetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+            <state relative-caret-position="153">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dhcpdetail.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="script.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-816" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dhcpdetail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/dhcpdetail.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1190">
+              <caret line="70" column="41" lean-forward="true" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -92,15 +100,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="127" column="47" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="my-css.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/my-css.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -135,12 +134,12 @@
         <option value="$PROJECT_DIR$/ui-modals.html" />
         <option value="$PROJECT_DIR$/index1.html" />
         <option value="$PROJECT_DIR$/js/devinfo.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/scss/style.css" />
-        <option value="$PROJECT_DIR$/devdetail.html" />
         <option value="$PROJECT_DIR$/js/devdetails.js" />
-        <option value="$PROJECT_DIR$/dhcpdetail.html" />
         <option value="$PROJECT_DIR$/js/dhcpdetail.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/devdetail.html" />
+        <option value="$PROJECT_DIR$/dhcpdetail.html" />
       </list>
     </option>
   </component>
@@ -225,8 +224,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Github\Web\js" />
       <recent name="D:\Github\Web" />
+      <recent name="D:\Github\Web\js" />
       <recent name="D:\Github\Web\images" />
     </key>
   </component>
@@ -252,12 +251,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530339215999</updated>
-      <workItem from="1530339217871" duration="37481000" />
+      <workItem from="1530339217871" duration="38439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37481000" />
+    <option name="totallyTimeSpent" value="38439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -311,23 +310,9 @@
     <entry file="file://$PROJECT_DIR$/assets/js/lib/gmap/gmaps.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/old-index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="40" column="116" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/devinfo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-714" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="70" column="41" lean-forward="true" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css">
@@ -401,13 +386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/devdetails.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -415,10 +393,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/dhcpdetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-816" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old-index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="40" column="116" selection-start-line="40" selection-start-column="116" selection-end-line="40" selection-end-column="116" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="41" lean-forward="true" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/devdetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+        <state relative-caret-position="118">
+          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -431,15 +445,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dhcpdetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dhcpdetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        <state relative-caret-position="153">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
         </state>
       </provider>
     </entry>
