@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SkmUIT</title>
-    <meta name="description" content="DHCP Detail">
+    <title>Sufee Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Detail about Device">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -45,13 +45,13 @@
                 <ul class="nav navbar-nav">
                     <li>
                     <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Device Info </a>
-                </li>
+                    </li>
                     <li>
                         <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>FreeRADIUS </a>
                     </li>
                     <h3 class="menu-title">Device Detail</h3><!-- /.menu-title -->
                     <li>
-                        <a id="general" href=""> <i class="menu-icon ti-email"></i>General </a>
+                        <a id="wireless" href=""> <i class="menu-icon ti-email"></i>General </a>
                     </li>
                     <li>
                         <a id="dhcp" href=""> <i class="menu-icon ti-email"></i>DHCP </a>
@@ -124,7 +124,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#"></a></li>
+                            <li><a href="#">Firewall</a></li>
                         </ol>
                     </div>
                 </div>
@@ -133,62 +133,24 @@
 
         <div class="content mt-3">
             <div class="animated">
-                <div class="col-lg-6">
+            
+
+                <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header" style="background-color: #272c33">
                             <strong class="card-title">
-                                <h4 style="color: white">DHCP Server</h4>
+                                <h4 style="color: white">Rules</h4>
                             </strong>
                         </div>
                         <div class="card-body">
-<!--                            <table class="table table-striped" id="dhcp-lan-table">
-                                <tbody>
-                                <tr><th scope="row">Start</th><td id="dhcp-start">123</td></tr>
-                                <tr><th scope="row">Limit</th><td id="dhcp-limit">123</td></tr>
-                                <tr><th scope="row">Lease time</th><td id="dhcp-time">123</td></tr>
-                                </tbody>
-                            </table>-->
-                            <div class="card-body card-block">
-                                <form action="http://10.71.1.75:8080/control/single" method="post" class="form-horizontal" id="dhcp-form">
-                                    <input type="hidden" name="type" value="dhcp">
-                                    <input type="hidden" name="mac" id="mac">
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="network" class=" form-control-label">Network</label></div>
-                                        <div class="col-12 col-md-9"><select id="network" name="network"></select><small class="form-text text-muted"><i class="fa fa-question-circle"></i> Select the network </small></div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="dhcp-start" class=" form-control-label">Start</label></div>
-                                        <div class="col-12 col-md-9"><input type="number" id="dhcp-start" name="start" class="form-control"><small class="form-text text-muted"><i class="fa fa-question-circle"></i> Lowest leased address as offset from the network address. </small></div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="dhcp-limit" class=" form-control-label">Limit</label></div>
-                                        <div class="col-12 col-md-9"><input type="number" id="dhcp-limit" name="limit" class="form-control"><small class="form-text text-muted"><i class="fa fa-question-circle"></i> Maximum number of leased addresses.  </small></div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="dhcp-time" class=" form-control-label">Lease Time</label></div>
-                                        <div class="col-12 col-md-9"><input  id="dhcp-time" name="time"class="form-control"><small class="form-text text-muted"><i class="fa fa-question-circle"></i> Expiry time of leased addresses, minimum is 2 minutes (2m).</small></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary pull-right" type="submit" id="dhcp-btn" form="dhcp-form" >Submit</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header" style="background-color: #272c33">
-                            <strong class="card-title">
-                                <h4 style="color: white">DHCP Leases</h4>
-                            </strong>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-striped table-hover" id="dhcp-table">
+                            <table class="table table-striped table-hover" id="rules-table">
                                 <thead>
-                                <th>IP Address</th>
-                                <th>MAC Address</th>
                                 <th>Name</th>
+                                <th>Source</th>
+                                <th>Destination</th>
+                                <th>ICMP type</th>
+                                <th>Family</th>
+                                <th>Target</th>
                                 </thead>
                                 <tbody></tbody>
                             </table>
@@ -202,8 +164,46 @@
 
 
 
+                <div class="modal fade" id="ssid-modal" role="dialog">
+                    <div class="modal-dialog">
 
-              
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal-title"></h5>
+                            </div>
+                            <div class="modal-body" id="modal-bod">
+                                <form action="http://10.71.1.75:8080/control/single" id="myform" method="POST">
+                                    <input type="interface" id="interface" name="interface"  class="form-control" style="display: none;">
+                                    <input type="hidden" value="ssid" name="type">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="ssid" class=" form-control-label">SSID</label></div>
+                                        <div class="col-12 col-md-9"><input type="ssid" id="ssid" name="ssid"  class="form-control"></div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="passwd" class=" form-control-label">Password</label></div>
+                                        <div class="col-12 col-md-9"><input type="password" id="passwd" name="passwd" placeholder="Enter New Password..." class="form-control"></div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="channel" class=" form-control-label">Channel</label></div>
+                                        <div class="col-12 col-md-9">
+                                            <input name="channel" id="channel" class="form-control">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary btn-sm" form="myform">
+                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                </button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
 
 
             </div><!-- .animated -->
@@ -218,8 +218,6 @@
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
-        <script src="js/dhcpdetail.js"></script>
-
-
+    <script src="js/firewall.js"></script>
 </body>
 </html>
