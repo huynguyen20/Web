@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <title>UiTiOt - Device Detail</title>
     <meta name="description" content="Detail about Device">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -148,11 +148,28 @@
                                 <tr><th scope="row">Device Name</th><td id="dname-td">123</td></tr>
                                 <tr><th scope="row">Firmware</th><td id="dfirm-td">123</td></tr>
                                 <tr><th scope="row">Memory</th><td id="dmem-td">123</td></tr>
+                                <tr><th scope="row">TX</th><td id="dtx-td">123</td></tr>
+                                <tr><th scope="row">RX</th><td id="drx-td">123</td></tr>
+                                <tr><th scope="row">Load Average</th><td id="dload-td">123</td></tr>
+                                <tr><th scope="row">Devices</th><td id="ddevice-td">123</td></tr>
+                                <tr><th scope="row">Last Update</th><td id="dtime-td">123</td></tr>
                                 </tbody>
                             </table>
 
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6">
+
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                                <h4 class="mb-3">RAM Usage </h4>
+                                <canvas id="doughutChart" height="221" width="443" style="display: block; width: 443px; height: 221px;"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
                 </div>
                 <div class="col-lg-6">
                     <div class="card">
@@ -222,7 +239,7 @@
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="encryption" class=" form-control-label">Encryption</label></div>
                                         <div class="col-12 col-md-9"><select id="encryption" name="encryption">
-                                            <option value="wep">WEP</option>
+                                            <option value="psk">PSK</option>
                                             <option value="psk2">PSK2</option>
                                             <option value="psk-mixed">Mixed</option>
                                         </select></div>
@@ -265,8 +282,8 @@
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+        <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
         <script src="js/devdetails.js"></script>
-
 
 </body>
 </html>
