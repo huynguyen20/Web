@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aada1d49-832e-4560-9eaa-903c2fae6936" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/devdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/devdetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dhcpdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/dhcpdetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firewalldetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/firewalldetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/devdetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/devdetails.js" afterDir="false" />
-    </list>
+    <list default="true" id="aada1d49-832e-4560-9eaa-903c2fae6936" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -254,12 +248,12 @@
       <option name="presentableId" value="Default" />
       <updated>1530339215999</updated>
       <workItem from="1530339217871" duration="39448000" />
-      <workItem from="1530552984318" duration="6551000" />
+      <workItem from="1530552984318" duration="6755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45999000" />
+    <option name="totallyTimeSpent" value="46203000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
