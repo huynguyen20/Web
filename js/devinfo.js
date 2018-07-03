@@ -1,10 +1,11 @@
 (function ($) {
     var currentURL = window.location.hostname;
     var object;
-
+    var num = 1;
     var getDeviceList = function(){
         var i=1;
         var tabledata="";
+        var maclist="";
         /*$("#bootstrap-data-table tbody").html("");*/
         $.ajax({
             url: "http://10.71.1.75:8080/user/distributor",
@@ -20,18 +21,22 @@
                     machine_type = machine_type.replace(/^\n|\n$/g, '');
                     var row;
                     if (diff<60){
-                        row='<tr><td>'+i+'</td><td>'+machine_type+'</td><td>'+this.device.mac+'</td><td>'+this.device.wan_ip+'</td><td>'+datestring+'</td><td><span class="label label-success">Connected</span></td></tr>'
+                        row='<tr><td>'+i+'</td><td>'+machine_type+'</td><td>'+this.device.mac+'</td><td>'+this.device.wan_ip+'</td><td>'+datestring+'</td><td><span class="badge badge-success">Connected</span></td></tr>'
                     }
                     else{
-                        row='<tr><td>'+i+'</td><td>'+machine_type+'</td><td>'+this.device.mac+'</td><td>'+this.device.wan_ip+'</td><td>'+datestring+'</td><td><span class="label label-danger">Disconnected</span></td></tr>'
+                        row='<tr><td>'+i+'</td><td>'+machine_type+'</td><td>'+this.device.mac+'</td><td>'+this.device.wan_ip+'</td><td>'+datestring+'</td><td><span class="badge badge-danger">Disconnected</span></td></tr>'
                     }
                     /*$("#bootstrap-data-table tbody").append(row);*/
 
                     tabledata = tabledata + row;
                     $("#bootstrap-data-table tbody").html(tabledata);
-                    $("#mac-select").append('<option>'+this.device.mac+'</option>');
+                    var irow= '<option>'+this.device.mac+'</option>';
+                    maclist+=irow;
                     i++;
                 });
+                if(num==1)
+                    $("#mac-select").html(maclist);
+                num=2;
             },
         });
 

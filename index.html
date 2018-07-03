@@ -6,13 +6,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SkmUIT - Homepage</title>
-    <meta name="description" content="SkmUIT - UiTiOt">
+    <title>SkmUIT - FreeRADIUS</title>
+    <meta name="description" content="Detail about Device">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
+
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="assets/scss/widgets.css">
     <link rel="stylesheet" href="assets/scss/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
@@ -30,114 +29,103 @@
 </head>
 <body>
         <!-- Left Panel -->
-        <aside id="left-panel" class="left-panel">
-            <nav class="navbar navbar-expand-sm navbar-default">
 
-                <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="./">Skm<b>UIT</b></a>
-                    <a class="navbar-brand hidden" href="./"><b>U</b></a>
-                </div>
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
 
-                <div id="main-menu" class="main-menu collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active">
-                            <a href="index.html"> <i class="menu-icon fa fa-home"></i>Device Info </a>
-                        </li>
-                        <li>
-                            <a href="splash.html"> <i class="menu-icon fa fa-user"></i>FreeRADIUS </a>
-                        </li>
-<!--                        <h3 class="menu-title">UI elements</h3>&lt;!&ndash; /.menu-title &ndash;&gt;
-                        <li>
-                            <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                        </li>
-                        <li>
-                            <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                        </li>
-                        <li>
-                            <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                        </li>
-                        <h3 id="detail" class="menu-title" style="display: none">Detail</h3>
-                        <li><a id="detail_wifi" href="ui-buttons.html" style="padding-left: 30px; display: none"><i class="menu-icon ti-align-left" ></i>Buttons</a>--></li>
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./">Skm<b>UIT</b></a>
+                <a class="navbar-brand hidden" href="./"><b>S</b></a>
+            </div>
 
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </nav>
-        </aside><!-- /#left-panel -->
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                    <a href="index.html"> <i class="menu-icon fa fa-home"></i>Device Info </a>
+                    </li>
+                    <li>
+                        <a href="splash.html"> <i class="menu-icon fa fa-user"></i>FreeRADIUS </a>
+                    </li>
+                   
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
 
     <!-- Left Panel -->
 
-
     <!-- Right Panel -->
 
-    <div id="right-panel" class="right-panel">
-        <header id="header" class="header">
+        <div id="right-panel" class="right-panel">
+            <header id="header" class="header">
 
-            <div class="header-menu">
+                <div class="header-menu">
 
-                <div class="col-sm-5">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                </div>
-
-                <div class="col-sm-7">
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/uit-logo.jpg" alt="User Avatar">
-                        </a>
-
+                    <div class="col-sm-5">
+                        <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                     </div>
 
-                </div>
-            </div>
+                    <div class="col-sm-7">
+                        <div class="user-area dropdown float-right">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="user-avatar rounded-circle" src="images/uit-logo.jpg" alt="User Avatar">
+                            </a>
 
-        </header>
+                        </div>
 
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Dashboard</h1>
                     </div>
                 </div>
-            </div>
 
-        </div>
+            </header>
 
-        <div class="content mt-3">
-            <div class="animated fadeIn">
-                <div class="row">
-
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Device List</strong>
-                            </div>
-                            <div class=" card-body">
-                                <table id="bootstrap-data-table" class="table table-hover">
-                                    <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">No.</th>
-                                        <th scope="col">Device Name</th>
-                                        <th scope="col">Device MAC</th>
-                                        <th scope="col">WAN IP</th>
-                                        <th scope="col">Last Update</th>
-                                        <th scope="col">Status</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    </tbody>
-                                </table>
-                            </div>
+            <div class="breadcrumbs">
+                <div class="col-sm-4">
+                    <div class="page-header float-left">
+                        <div class="page-title">
+                            <h1>Dashboard</h1>
                         </div>
                     </div>
+                </div>
+
+            </div>
+
+            <div class="content mt-3">
+                <div class="animated fadeIn">
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Device List</strong>
+                                </div>
+                                <div class=" card-body">
+                                    <table id="bootstrap-data-table" class="table table-hover">
+                                        <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">No.</th>
+                                            <th scope="col">Device Name</th>
+                                            <th scope="col">Device MAC</th>
+                                            <th scope="col">WAN IP</th>
+                                            <th scope="col">Last Update</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-primary pull-right" type="submit" data-toggle="modal" data-target="#modal-edit-user" id="send-cmd-btn">Send Command</button>
+                                </div>
 
 
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
 
 
 
@@ -145,33 +133,40 @@
 
 
 
-    </div><!-- /#right-panel -->
+        </div><!-- /#right-panel -->
+
 
     <!-- Right Panel -->
+    <div class="modal fade" id="modal-edit-user" role="dialog">
+            <div class="modal-dialog">
 
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title">Send Command to Devices <b id="edit-user-name-lab"></b></h5>
+                    </div>
+                    <div class="modal-body" id="modal-bod">
+                        <form action="http://10.71.1.75:8080/control/multiple" id="myform" method="POST">
+                            <b>Command:</b><br>
+                            <textarea name="command" cols="50" rows="10" id="command-area"></textarea>
+                            <label for="mac-select">Select device (hold CTRL or DRAG to multiselect) :</label>
+                            <select multiple class="form-control" id="mac-select" name="mac"></select>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" form="myform">
+                            Submit
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="js/devinfo.js"> </script>
-
-<!--        <script src="assets/js/lib/data-table/datatables.min.js"></script>
-        <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
-        <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
-        <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
-        <script src="assets/js/lib/data-table/jszip.min.js"></script>
-        <script src="assets/js/lib/data-table/pdfmake.min.js"></script>
-        <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
-        <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
-        <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
-        <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
-        <script src="assets/js/lib/data-table/datatables-init.js"></script>-->
-
-
-
-
-
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="js/devinfo.js"></script>
 </body>
 </html>
