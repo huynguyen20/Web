@@ -17,7 +17,13 @@
                 $("#dmac-td").html(data.device.mac);
                 $("#dname-td").html(data.device.machine_type);
                 $("#dfirm-td").html(data.device.firmware);
-                $("#dmem-td").html(data.device.free_ram+"/"+data.device.total_ram);
+                $("#dmem-td").html(Math.floor(data.device.free_ram/1000)+" kB / "+Math.floor(data.device.total_ram/1000)+" kB");
+                $("#dtx-td").html(data.device.tx_bytes+" Bytes");
+                $("#drx-td").html(data.device.rx_bytes+" Bytes");
+                $("#dload-td").html(data.device.load_1.toFixed(2)+", "+data.device.load_5.toFixed(2)+", "+data.device.load_15.toFixed(2));
+                $("#ddevice-td").html(data.device.connected);
+                var lasttime = new Date(1000*data.device.created_at);
+                $("#dtime-td").html(lasttime.toLocaleString());
                 var dhcpdata="";
                 $.each(data.dhcp,function(){
                     var tr = '<tr><td>' + this.ip + '</td><td>' + this.mac + '</td><td>' + this.name + '</td></tr>';
@@ -62,6 +68,36 @@
                     //$("#ssids-table tbody").append(tr);
                 }
                 $("#ssids-table tbody").html(ap_data);
+                var free = Math.floor(data.device.free_ram/1000);
+                var used = Math.floor((data.device.total_ram-data.device.free_ram)/1000);
+                var ctx = document.getElementById( "doughutChart" );
+                ctx.height = 200;
+                var myChart = new Chart( ctx, {
+                    type: 'doughnut',
+                    data: {
+                        datasets: [ {
+                            data: [ used, free],
+                            backgroundColor: [
+                                "rgba(217,83,79,0.7)",
+                                "rgba(0, 123, 255,0.7)"
+                            ],
+                            hoverBackgroundColor: [
+                                "rgba(217,83,79,0.7)",
+                                "rgba(0, 123, 255,0.7)"
+
+                            ]
+
+                        } ],
+                        labels: [
+                            "Used Memory (kB)",
+                            "Free Memory (kB)"
+                        ]
+                    },
+                    options: {
+                        responsive: true
+                    }
+                } );
+
             }
         })
     }
@@ -101,8 +137,8 @@
         }
         if(dinterface=="radio1"){
             switch (object.config_wireless.default_radio1[0].encryption){
-                case "wep":
-                    $("#encryption").val("wep");
+                case "psk":
+                    $("#encryption").val("psk");
                     break;
                 case "psk2":
                     $("#encryption").val("psk2");

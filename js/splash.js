@@ -30,6 +30,9 @@
     })
 
     $("#user-list-table tbody").on('click','button',function(){
+        $("#edit-max-daily-session").val('');
+        $("#edit-max-monthly-session").val('');
+        $("#edit-expiration").val('');
         var userno,username,expiration,maxdailysession,logintime,maxmonthlysession;
         userno = $(this).parent().siblings("td").html();
         username = $(this).parent().siblings("td").next().html();
@@ -50,7 +53,6 @@
         if(maxmonthlysession.localeCompare('undefined')==-1){
             $("#edit-max-monthly-session").val(maxmonthlysession);
         }
-            
     
     })
 
