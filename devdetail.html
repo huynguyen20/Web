@@ -47,14 +47,17 @@
                     <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Device Info </a>
                     </li>
                     <li>
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>FreeRADIUS </a>
+                        <a href="splash.html"> <i class="menu-icon fa fa-dashboard"></i>FreeRADIUS </a>
                     </li>
                     <h3 class="menu-title">Device Detail</h3><!-- /.menu-title -->
-                    <li>
-                        <a id="wireless" href=""> <i class="menu-icon ti-email"></i>Wireless </a>
+                    <li class="active">
+                        <a id="general" href=""> <i class="menu-icon ti-email"></i>General </a>
                     </li>
                     <li>
                         <a id="dhcp" href=""> <i class="menu-icon ti-email"></i>DHCP </a>
+                    </li>
+                    <li>
+                        <a id="firewall" href=""> <i class="menu-icon ti-email"></i>Firewall </a>
                     </li>
 
                 </ul>
@@ -139,7 +142,7 @@
                             </strong>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped table-hover" id="device-detail-table">
+                            <table class="table table-striped" id="device-detail-table">
                                 <tbody>
                                 <tr><th scope="row">MAC</th><td id="dmac-td">123</td></tr>
                                 <tr><th scope="row">Device Name</th><td id="dname-td">123</td></tr>
@@ -159,7 +162,7 @@
                             </strong>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped table-hover" id="dhcp-table">
+                            <table class="table table-striped" id="dhcp-table">
                                 <thead>
                                 <th>IP Address</th>
                                 <th>MAC Address</th>
@@ -174,7 +177,7 @@
                     <div class="card">
                         <div class="card-header" style="background-color: #272c33">
                             <strong class="card-title">
-                                <h4 style="color: white">SSID Detail</h4>
+                                <h4 style="color: white">Wireless</h4>
                             </strong>
                         </div>
                         <div class="card-body">
@@ -209,10 +212,20 @@
                             </div>
                             <div class="modal-body" id="modal-bod">
                                 <form action="http://10.71.1.75:8080/control/single" id="myform" method="POST">
-                                    <input type="interface" id="interface" name="interface"  class="form-control" style="display: none;">
+                                    <input type="hidden" id="radio" name="radio"  class="form-control" style="display: none;">
+                                    <input type="hidden" value="wireless" name="type">
+                                    <input type="hidden" name="mac" id="mac">
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="ssid" class=" form-control-label">SSID</label></div>
                                         <div class="col-12 col-md-9"><input type="ssid" id="ssid" name="ssid"  class="form-control"></div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="encryption" class=" form-control-label">Encryption</label></div>
+                                        <div class="col-12 col-md-9"><select id="encryption" name="encryption">
+                                            <option value="wep">WEP</option>
+                                            <option value="psk2">PSK2</option>
+                                            <option value="psk-mixed">Mixed</option>
+                                        </select></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="passwd" class=" form-control-label">Password</label></div>
@@ -221,7 +234,7 @@
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="channel" class=" form-control-label">Channel</label></div>
                                         <div class="col-12 col-md-9">
-                                            <input name="channel" id="channel" class="form-control">
+                                            <input type="number" name="channel" id="channel" class="form-control">
                                             </input>
                                         </div>
                                     </div>

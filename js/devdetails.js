@@ -2,7 +2,8 @@
     var coll = document.getElementsByClassName("collapsible");
     var i;
     var object,serverLink='http://10.71.1.75:8080/user/distributor';
-
+    var currentLocation=document.location.toString();
+    var mac=currentLocation.split("?")[1];
     var getDeviceDetails = function(devmac){
         $.ajax({
             url: serverLink+':'+devmac,
@@ -82,13 +83,37 @@
         console.log(dinterface);
         if(dinterface=="radio0"){
             $("#modal-title").html('Edit Interface '+dinterface);
-            $("#interface").val(dinterface);
+            $("#radio").val(dinterface);
+            switch (object.config_wireless.default_radio0[0].encryption){
+                case "wep":
+                    $("#encryption").val("wep");
+                    break;
+                case "psk2":
+                    $("#encryption").val("psk2");
+                    break;
+                case "psk-mixed":
+                    $("#encryption").val("psk-mixed");
+                    break;
+            }
             $("#channel").val(object.config_wireless.radio0[0].channel);
             $("#ssid").val(object.config_wireless.default_radio0[0].ssid);
+            $("#passwd").val(object.config_wireless.default_radio0[0].key);
         }
         if(dinterface=="radio1"){
+            switch (object.config_wireless.default_radio1[0].encryption){
+                case "wep":
+                    $("#encryption").val("wep");
+                    break;
+                case "psk2":
+                    $("#encryption").val("psk2");
+                    break;
+                case "psk-mixed":
+                    $("#encryption").val("psk-mixed");
+                    break;
+            }
             $("#modal-title").html('Edit Interface '+dinterface);
-            $("#interface").val(dinterface);
+            $("#radio").val(dinterface);
+            $("#passwd").val(object.config_wireless.default_radio1[0].key);
             $("#channel").val(object.config_wireless.radio1[0].channel);
             $("#ssid").val(object.config_wireless.default_radio1[0].ssid);
         }
@@ -105,27 +130,21 @@
 
     })
 
-    $("#modal-bod input").on('change', function(){
-        $(this).addClass('changed');
-    })
 
     $("#myform").on('submit', function(){
         alert("abc");
-        $('input:not(.changed)').prop('disabled',true);
-        $('#interface').prop('disabled',false);
+        $("#mac").val(mac);
     })
 
     window.setInterval(function(){
-        var currentLocation=document.location.toString();
-        var mac=currentLocation.split("?")[1];
         getDeviceDetails(mac);
     }, 15000);
 
     $(document).ready(function(){
         var currentLocation=document.location.toString();
-        var mac=currentLocation.split("?")[1];
         getDeviceDetails(mac);
         $("#dhcp").attr("href","dhcpdetail.html?"+mac);
-
+        $("#general").attr("href","devdetail.html?"+mac);
+        $("#firewall").attr("href","firewalldetail.html?"+mac);
     })
 }(jQuery))

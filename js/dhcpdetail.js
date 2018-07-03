@@ -2,6 +2,8 @@
     var coll = document.getElementsByClassName("collapsible");
     var i;
     var object,serverLink='http://10.71.1.75:8080/user/distributor';
+    var currentLocation=document.location.toString();
+    var mac=currentLocation.split("?")[1];
 
     var getDHCP = function(devmac){
         $.ajax({
@@ -12,6 +14,9 @@
             method: "GET",
             success: function(data){
                 object=data;
+                var options="";
+                options+='<option value="lan">lan</option><option value="wlan">wlan</option>';
+                $("#network").html(options);
                 $("#device-name").html(data.device.machine_type);
                 $("#dhcp-start").val(data.config_dhcp.lan[0].start);
                 $("#dhcp-limit").val(data.config_dhcp.lan[0].limit);
@@ -33,26 +38,35 @@
     }
 
 
+    $("#dhcp-form").on('submit', function(){
+        $("#mac").val(mac);
 
-    $("#modal-bod input").on('change', function(){
-        $(this).addClass('changed');
-    })
-
-    $("#myform").on('submit', function(){
-        alert("abc");
-        $('input:not(.changed)').prop('disabled',true);
-        $('#interface').prop('disabled',false);
     })
     window.setInterval(function(){
-        var currentLocation=document.location.toString();
-        var mac=currentLocation.split("?")[1];
+        
         getDHCP(mac);
     }, 15000);
     $(document).ready(function(){
         var currentLocation=document.location.toString();
         var mac=currentLocation.split("?")[1];
         getDHCP(mac);
-        $("#wireless").attr("href","devdetail.html?"+mac);
+        $("#dhcp").attr("href","dhcpdetail.html?"+mac);
+        $("#general").attr("href","devdetail.html?"+mac);
+        $("#firewall").attr("href","firewalldetail.html?"+mac);
 
+    })
+    $("#network").on('change', function(){
+        if (this.value=="wlan"){
+            $("#dhcp-start").val(object.config_dhcp.wlan[0].start);
+            $("#dhcp-limit").val(object.config_dhcp.wlan[0].limit);
+            $("#dhcp-time").val(object.config_dhcp.wlan[0].leasetime);
+            $("#dhcp-int").html(object.config_dhcp.wlan[0].interface);
+        }
+        if (this.value=="lan"){
+            $("#dhcp-start").val(object.config_dhcp.lan[0].start);
+            $("#dhcp-limit").val(object.config_dhcp.lan[0].limit);
+            $("#dhcp-time").val(object.config_dhcp.lan[0].leasetime);
+            $("#dhcp-int").html(object.config_dhcp.lan[0].interface);
+        }
     })
 }(jQuery))

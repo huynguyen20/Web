@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <title>SkmUIT</title>
     <meta name="description" content="DHCP Detail">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -47,16 +47,18 @@
                     <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Device Info </a>
                 </li>
                     <li>
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>FreeRADIUS </a>
+                        <a href="splash.html"> <i class="menu-icon fa fa-dashboard"></i>FreeRADIUS </a>
                     </li>
                     <h3 class="menu-title">Device Detail</h3><!-- /.menu-title -->
                     <li>
-                        <a id="wireless" href=""> <i class="menu-icon ti-email"></i>Wireless </a>
+                        <a id="general" href=""> <i class="menu-icon ti-email"></i>General </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a id="dhcp" href=""> <i class="menu-icon ti-email"></i>DHCP </a>
                     </li>
-
+                    <li>
+                        <a id="firewall" href=""> <i class="menu-icon ti-email"></i>Firewall </a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -147,14 +149,20 @@
                                 </tbody>
                             </table>-->
                             <div class="card-body card-block">
-                                <form action="http://10.71.1.75:8080/control/dhcp" method="post" class="form-horizontal" id="dhcp-form">
+                                <form action="http://10.71.1.75:8080/control/single" method="post" class="form-horizontal" id="dhcp-form">
+                                    <input type="hidden" name="type" value="wireless">
+                                    <input type="hidden" name="mac" id="mac">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="network" class=" form-control-label">Network</label></div>
+                                        <div class="col-12 col-md-9"><select id="network" name="network"></select><small class="form-text text-muted"><i class="fa fa-question-circle"></i> Select the network </small></div>
+                                    </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="dhcp-start" class=" form-control-label">Start</label></div>
-                                        <div class="col-12 col-md-9"><input  id="dhcp-start" name="start" class="form-control"><small class="form-text text-muted"><i class="fa fa-question-circle"></i> Lowest leased address as offset from the network address. </small></div>
+                                        <div class="col-12 col-md-9"><input type="number" id="dhcp-start" name="start" class="form-control"><small class="form-text text-muted"><i class="fa fa-question-circle"></i> Lowest leased address as offset from the network address. </small></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="dhcp-limit" class=" form-control-label">Limit</label></div>
-                                        <div class="col-12 col-md-9"><input  id="dhcp-limit" name="limit" class="form-control"><small class="form-text text-muted"><i class="fa fa-question-circle"></i> Maximum number of leased addresses.  </small></div>
+                                        <div class="col-12 col-md-9"><input type="number" id="dhcp-limit" name="limit" class="form-control"><small class="form-text text-muted"><i class="fa fa-question-circle"></i> Maximum number of leased addresses.  </small></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="dhcp-time" class=" form-control-label">Lease Time</label></div>
@@ -195,45 +203,7 @@
 
 
 
-                <div class="modal fade" id="ssid-modal" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modal-title"></h5>
-                            </div>
-                            <div class="modal-body" id="modal-bod">
-                                <form action="http://10.71.1.75:8080/control/single" id="myform" method="POST">
-                                    <input type="interface" id="interface" name="interface"  class="form-control" style="display: none;">
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="ssid" class=" form-control-label">SSID</label></div>
-                                        <div class="col-12 col-md-9"><input type="ssid" id="ssid" name="ssid"  class="form-control"></div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="passwd" class=" form-control-label">Password</label></div>
-                                        <div class="col-12 col-md-9"><input type="password" id="passwd" name="passwd" placeholder="Enter New Password..." class="form-control"></div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3"><label for="channel" class=" form-control-label">Channel</label></div>
-                                        <div class="col-12 col-md-9">
-                                            <input name="channel" id="channel" class="form-control">
-                                            </input>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary btn-sm" form="myform">
-                                    <i class="fa fa-dot-circle-o"></i> Submit
-                                </button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+              
 
 
             </div><!-- .animated -->
